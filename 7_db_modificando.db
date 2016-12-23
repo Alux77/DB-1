@@ -1,0 +1,52 @@
+INSERT INTO Orders (CustomerID, OrderDate, RequiredDate, ShippedDate)
+VALUES ('1', '2016-12-07', '2016-12-17', '2016-12-12');
+
+INSERT INTO Customers (CompanyName, ContactName, ContactTitle, Address, City, State)
+VALUES ('Alux Corp.', 'Mario Cervantes', 'CO', '1977 Elm Street', 'CDMX', 'D.F.');
+
+SELECT Orders.CustomerID AS CompanyID, Customers.CompanyName, Orders.OrderDate
+FROM Orders
+LEFT JOIN Customers
+ON Orders.CustomerID=Customers.CustomerID
+WHERE CompanyName='Floor Co.';
+
+UPDATE orders
+SET CustomerId='6'
+WHERE OrderDate='2013-01-29';
+
+SELECT Orders.CustomerID AS CompanyID, Customers.CompanyName, Orders.OrderDate
+FROM Orders
+LEFT JOIN Customers
+ON Orders.CustomerID=Customers.CustomerID
+WHERE CompanyName='Alux Corp.';
+
+UPDATE orders
+SET CustomerId='6'
+WHERE OrderDate='2013-03-16';
+
+SELECT OrderID, ProductID, UnitPrice, Quantity
+FROM OrderDetails
+WHERE ProductID=5
+ORDER BY ProductID ASC;
+
+DELETE FROM OrdersDetails
+WHERE ProductID=5 AND UnitPrice='9.97';
+
+SELECT CustomerID, OrderDate, RequiredDate, ShippedDate
+FROM Orders
+WHERE CustomerID=5
+ORDER BY CustomerID ASC;
+
+DELETE FROM Orders
+WHERE CustomerID=5;
+
+SELECT CustomerID, OrderDate, RequiredDate, ShippedDate
+FROM Orders
+ORDER BY CustomerID ASC;
+
+SELECT CustomerID, CompanyName, ContactName, ContactTitle, Address, City, State
+FROM Customers
+ORDER BY CustomerID;
+
+DELETE FROM Customers
+WHERE CustomerID=5;

@@ -1,0 +1,29 @@
+SELECT
+
+ALL (*)
+
+FROM
+
+WHERE
+
+GROUP BY
+
+ORDER BY
+
+HAVING
+
+SELECT OrderDetails.OrderID, OrderDetails.UnitPrice * OrderDetails.Quantity
+FROM OrderDetails
+WHERE OrderID=4
+GROUP BY OrderID;
+
+SELECT OrderID, SUM(UnitPrice) * SUM(Quantity)
+FROM OrderDetails
+WHERE UnitPrice * Quantity > 1000
+GROUP BY OrderID;
+
+SELECT OrderID, SUM(Quantity)
+FROM OrderDetails
+GROUP BY OrderID;
+
+
